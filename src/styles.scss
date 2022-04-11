@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container{
+    padding: 0px !important;
+    border-top: 19px solid #EF7139;
+    border-top-right-radius: 21px !important;
+    border-top-left-radius: 21px !important;
+}

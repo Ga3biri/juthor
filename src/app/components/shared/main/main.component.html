@@ -1,0 +1,23 @@
+<div class="grid-x grid-padding-x grid-padding-y align-justify search-bar"> 
+    <div class="cell small-8">
+        <input (input)="search($event)" style="margin: 0px;border-radius: 30px;padding-left: 50px;font-size: 14px;" type="search" placeholder="Search by Name or Identifier">
+    </div>
+    <div class="cell small-4 text-right">
+        <svg style="cursor: pointer;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" (click)="newProduct()">
+            <rect width="36" height="36" fill="url(#pattern0)"/>
+            <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_5_76" transform="scale(0.0175439)"/>
+            </pattern>
+            <image id="image0_5_76" width="57" height="57" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAYAAACMGIOFAAAEAUlEQVRogd2bS3LiSBCGv1R4gVeDboBPMMxiIuRV4xM0cwLjE7Q4wdgnQH0C2ydobmC8aiK8GHyD6RMIr8xEeOafRUHbIDCSUFnY38qPkip/sh6ZWYXhgTSOWhifEC2gA4BZJ9NQGoFNQRNME/TPbZhMplXbY1W9KI1/b8PBKaiLWav0i8QENASuw2T8dxW27Swy7UenyGKMdhUGLSGNgIswGY92eU1pkWl83AUNdvJaXpx3+2XFFhaZxlELuFw7x3wjhvB4VnTeFhKZxlEPbIDRLGZdhYgp6I8iXg3yNkzj6BKzy1oFAhhNzG7SOPoz/yNbSON2Exrfahme25CuwmR8tq3ZqyKdwMMbLytnVeQQumW4Nr7ttUAAs14aR5evNdkocj4H92+IrsMJPd/473V/TOOoh9mrn85eIp2sW3UzIt0+aH/VvoqWQUzh8Wh1H103XOvfJspiNLHDzLBdEpnGx12P8/AH0lE4+G7o6TehB0/9fEnjaEnDiic18NQxSOeLrCJM7iYmEm99wVKg8FPkfLHxGWyvpk07ZRavYtZ56c0XnrQv3jqtA7N48WMA84R33zf94nx2EdvCk3bQq9UcbzS6sBApfa7VFl8YPYDAFZ3eILuvBfsEzpPvIz4tSRpHnQD4oF5cYO0A+9ieBDUDZL/UbYZXjM7BDvvjD6RzspHMBmaTzO9qnOTsqyUjMco5xNL+sco8iHRUVYU7D2kcdTC7Kf6kbnNX61Z5S4Hz/krHuqVFurOPt8PVfMtxUL7bg5s0jhLM8n3Cerx/mbGncbuJHf66/cH/mijoALuI1O0iMiiE0QTbWDzK0jhhKb1qtIEccyzY+VgqcOeDHxgxCpAm21u+Z2wagH1wkU+jAB79lSFqRughTO4mgVvxdF+3QT4w3Mo/T5oZ1mqNL6QhPAcDVzWa4gVX1509i3Qhmm7rNataDIaL4OM5rBMFNvZKzPB7FPFCz0+RLgD2ugAtVyC8JutaugO0HKCLONO+MmywqGq7uz+ceutqZVRmj+76x0Pg/ZYopYswGS+JzKZaeux5PHHyjO5hljlIyogMk8nURPdtjKoOoQf0b2/dRaa1SXOYjEdIF/5Nqw4TcZjcrY3DN1YG3LjWtT+zKsTNw40BzfbLSv3oCszfSrgzug4H41erBltrPO4Fe+pR0d8mEHIWssLBuLdPc9QtMjoLk++5juSL3pLsyBiWLfJWg+7dKrp+kVlHoZJkmIxHplkL+FrYtiqQLtCsU0Qg7HRzOepgnJeq9BVG14jzsgXt3e+gu/J9TMWhoNCDwXAXcQsq/DZBuwmNrjvCLuddJ8xGLqOfDav6+kRlIldxGYe1MVqgzUcKYv7dkKdR0bmWl/8BGPGDApMli8MAAAAASUVORK5CYII="/>
+            </defs>
+        </svg>
+            
+    </div>
+</div>
+
+
+
+<!-- product list -->
+
+<app-product-list [products]="products"></app-product-list>

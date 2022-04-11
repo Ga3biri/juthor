@@ -1,0 +1,53 @@
+<section id="new-product">
+    <form [formGroup]="form" (ngSubmit)="submit()" >
+        <div class="row">
+            <div class="form-group">
+                <div class="columns  small-6">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" formControlName="name" [ngClass]="{'text-danger': submitted &&  f.name.errors}">
+                </div>
+                <div class="columns  small-6">
+                    <label for="">Price</label>
+                    <input type="number" class="form-control" formControlName="price" [ngClass]="{'text-danger': submitted &&  f.price.errors}">
+    
+                </div>
+                <div class="columns small-12">
+                    <label for="">Images </label>
+                    <ngx-dropzone (change)="onSelect($event)" accept="image/jpeg,image/jpg,image/png,image/gif" [multiple]="true" [ngClass]="{'text-danger': submitted && files.length == 0}">
+                        <ngx-dropzone-label>Drag & Drop or <span>Browse</span></ngx-dropzone-label>
+                        <ngx-dropzone-image-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" [file]="f" >
+                        </ngx-dropzone-image-preview>
+                    </ngx-dropzone>
+    
+                </div>
+            </div>
+            <div class="columns small-12" style="padding: 0px;">
+                <hr style="border: 1px solid #cbc3c378;">
+            </div>
+            <div class="form-group">
+                <div class="columns  small-6">
+                    <label for="">Cost</label>
+                    <input type="number" class="form-control" [(ngModel)]="cost_value" [ngModelOptions]="{standalone: true}" [ngClass]="{'text-danger': submitted && cost_quantity_error}">
+    
+                </div>
+                <div class="columns  small-6">
+                    <label for="">Quantity</label>
+                    <input type="number" class="form-control" [(ngModel)]="quantity_value" [ngModelOptions]="{standalone: true}" [ngClass]="{'text-danger': submitted && cost_quantity_error}">
+                </div>
+
+                <div class="columns small-12">
+                    <div class="row">
+                        <div class="button-group">
+                            <div class="columns  small-6 text-right cancel-button">
+                                <button class="warning button hollow small" (click)="cancel()">Cancel</button>
+                            </div>
+                            <div class="columns  small-6 save-button">
+                                <button class="warning button small">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
