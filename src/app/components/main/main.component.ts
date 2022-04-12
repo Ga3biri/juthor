@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { NewProductComponent } from '../../new-product/new-product.component';
+import { NewProductComponent } from '../new-product/new-product.component';
 
 @Component({
   selector: 'app-main',
