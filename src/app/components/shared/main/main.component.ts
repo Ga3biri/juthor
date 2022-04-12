@@ -12,6 +12,7 @@ import { NewProductComponent } from '../../new-product/new-product.component';
 export class MainComponent implements OnInit {
 
   products: Product[] = [];
+  newAdd :any;
   constructor(private dialog:MatDialog,private productService:ProductService) { }
 
   ngOnInit(): void {
@@ -25,7 +26,10 @@ export class MainComponent implements OnInit {
       width: '600px',
     });
     dialogRef.afterClosed().subscribe(result => {
-        this.getAllProduct()
+        this.products = []
+        setTimeout(() => {
+          this.getAllProduct()
+        }, 10);
     })
   }
 
@@ -33,7 +37,6 @@ export class MainComponent implements OnInit {
     this.products = this.productService.getProducts()
   }
   search($event:any){
-    console.log($event.target.value)
     this.products = this.productService.searchProduct($event.target.value)
   }
 }

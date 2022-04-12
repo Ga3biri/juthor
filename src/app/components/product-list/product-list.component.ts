@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Product} from '../../models/product';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,10 +18,11 @@ import { ProductService } from 'src/app/services/product.service';
   ]
 })
 
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit , OnChanges{
   columnsToDisplay = ['image','name', 'quantity', 'cost', 'price','action'];
   expandedElement: any;
   @Input() products:any;
+  // @Input() add:any;
 
   public canvasWidth = 300
   public needleValue = 65
@@ -40,6 +41,13 @@ export class ProductListComponent implements OnInit {
   constructor(private dialog:MatDialog,private productService:ProductService){ }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(SimpleChanges: SimpleChanges){
+    // console.log(SimpleChanges)
+    // if(SimpleChanges.products.previousValue){
+    //   this.products = this.products.push(SimpleChanges.products.currentValue)
+    // }
   }
 
   addQuantity(product: Product) {
